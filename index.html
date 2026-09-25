@@ -7,12 +7,15 @@
   <meta name="description" content="Product Designer 나정연 포트폴리오" />
   <meta property="og:title" content="나정연 포트폴리오" />
   <meta property="og:description" content="Product Designer 나정연 포트폴리오" />
+  <meta property="og:image" content="pages/01.webp" />
+  <link rel="preload" as="image" href="pages/01.webp" />
   <style>
     :root {
       --bg: #f4f4f2;
       --fg: #111;
       --muted: #777;
-      --line: #ddd;
+      --line: rgba(0, 0, 0, 0.08);
+      --header-bg: rgba(244, 244, 242, 0.85);
       --btn-bg: #111;
       --btn-fg: #fff;
     }
@@ -21,84 +24,110 @@
         --bg: #161616;
         --fg: #f2f2f2;
         --muted: #999;
-        --line: #2c2c2c;
+        --line: rgba(255, 255, 255, 0.08);
+        --header-bg: rgba(22, 22, 22, 0.85);
         --btn-bg: #f2f2f2;
         --btn-fg: #111;
       }
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
     body {
-      display: flex;
-      flex-direction: column;
       background: var(--bg);
       color: var(--fg);
       font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
     }
     header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 14px 24px;
+      padding: 12px 24px;
+      background: var(--header-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
     .name { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
     .name span { color: var(--muted); font-weight: 400; margin-left: 8px; }
-    .actions { display: flex; gap: 8px; }
     .btn {
       display: inline-flex;
       align-items: center;
       height: 34px;
       padding: 0 14px;
-      border: 1px solid var(--fg);
       border-radius: 999px;
+      background: var(--btn-bg);
+      color: var(--btn-fg);
       font-size: 13px;
       font-weight: 500;
-      color: var(--fg);
       text-decoration: none;
       white-space: nowrap;
     }
-    .btn.primary { background: var(--btn-bg); color: var(--btn-fg); border-color: var(--btn-bg); }
-    main { flex: 1; min-height: 0; }
-    iframe { display: block; width: 100%; height: 100%; border: 0; }
-
-    /* Mobile browsers render embedded PDFs poorly, so hand off to the native viewer. */
-    .mobile { display: none; }
+    main { max-width: 1920px; margin: 0 auto; }
+    /* Slices of one long PDF page; no gaps so they read as a single sheet. */
+    main img { display: block; width: 100%; height: auto; }
     @media (max-width: 768px) {
-      header { padding: 12px 16px; }
+      header { padding: 10px 16px; }
       .name span { display: none; }
-      .actions .open-new { display: none; }
-      iframe { display: none; }
-      .mobile {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 14px;
-        height: 100%;
-        padding: 32px 16px;
-        text-align: center;
-      }
-      .mobile p { color: var(--muted); font-size: 14px; line-height: 1.6; }
-      .mobile .btn { height: 44px; padding: 0 24px; font-size: 15px; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="name">나정연<span>Product Designer · Portfolio</span></div>
-    <div class="actions">
-      <a class="btn open-new" href="view.html" target="_blank" rel="noopener">새 창으로 보기</a>
-      <a class="btn primary" href="portfolio.pdf" download="나정연_포트폴리오.pdf">다운로드</a>
-    </div>
+    <a class="btn" href="portfolio.pdf" download="나정연_포트폴리오.pdf">PDF 다운로드</a>
   </header>
   <main>
-    <iframe src="portfolio.pdf#toolbar=0&navpanes=0&view=FitH" title="나정연 포트폴리오"></iframe>
-    <div class="mobile">
-      <p>포트폴리오는 PDF로 제공됩니다.<br />파일 용량이 커 로딩에 시간이 걸릴 수 있어요.</p>
-      <a class="btn primary" href="portfolio.pdf" target="_blank" rel="noopener">포트폴리오 열기</a>
-    </div>
+      <img src="pages/01.webp" width="1920" height="1600" loading="eager" decoding="async" alt="나정연 포트폴리오" />
+      <img src="pages/02.webp" width="1920" height="1600" loading="eager" decoding="async" alt="" />
+      <img src="pages/03.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/04.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/05.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/06.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/07.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/08.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/09.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/10.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/11.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/12.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/13.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/14.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/15.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/16.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/17.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/18.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/19.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/20.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/21.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/22.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/23.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/24.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/25.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/26.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/27.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/28.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/29.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/30.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/31.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/32.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/33.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/34.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/35.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/36.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/37.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/38.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/39.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/40.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/41.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/42.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/43.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/44.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/45.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/46.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/47.webp" width="1920" height="1600" loading="lazy" decoding="async" alt="" />
+      <img src="pages/48.webp" width="1920" height="418" loading="lazy" decoding="async" alt="" />
   </main>
 </body>
 </html>
